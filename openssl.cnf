@@ -6,7 +6,7 @@
 # This definition stops the following lines choking if HOME isn't
 # defined.
 HOME			= .
-RANDFILE		= $ENV::HOME/.rnd
+RANDFILE		= /home/user/Documents/GIS_P2_2022-2023/private/randFile
 
 # Extra OBJECT IDENTIFIER info:
 #oid_file		= $ENV::HOME/.oid
@@ -34,28 +34,27 @@ default_ca	= CA_default		# The default ca section
 ####################################################################
 [ CA_default ]
 
-dir		= "/root/P2”		# Where everything is kept
-certs		= $dir/certs		# Where the issued certs are kept
-crl_dir		= $dir/crl		# Where the issued crl are kept
-database		= $dir/index.txt	# database index file.
+certs		= /home/user/Documents/GIS_P2_2022-2023/certs/		# Where the issued certs are kept
+crl_dir		= /home/user/Documents/GIS_P2_2022-2023/crl/		# Where the issued crl are kept
+database	= /home/user/Documents/GIS_P2_2022-2023/index.txt	# database index file.
 #unique_subject	= no			# Set to 'no' to allow creation of
 					# several ctificates with same subject.
-new_certs_dir	= $dir/newcerts		# default place for new certs.
+new_certs_dir	= /home/user/Documents/GIS_P2_2022-2023/newcerts/		# default place for new certs.
 
-certificate	= $dir/certs/ca.crt 	# The CA certificate
-serial		= $dir/serial.txt 	# The current serial number
-crlnumber	= $dir/crlnumber.txt	# the current crl number
+certificate	= /home/user/Documents/GIS_P2_2022-2023/certs/ca.crt # The CA certificate
+serial		= /home/user/Documents/GIS_P2_2022-2023/serial.txt # The current serial number
+crlnumber	= /home/user/Documents/GIS_P2_2022-2023/crlnumber.txt	# the current crl number
 					# must be commented out to leave a V1 CRL
-crl		= $dir/crl.pem 		# The current CRL
-private_key	= $dir/private/ca.key 	# The private key
-RANDFILE		= $dir/private/randFile	# private random number file
+crl		= /home/user/Documents/GIS_P2_2022-2023/crl.pem # The current CRL
+private_key	= /home/user/Documents/GIS_P2_2022-2023/private/ca.key # The private key
+RANDFILE		= /home/user/Documents/GIS_P2_2022-2023/private/randFile	# private random number file
 
 x509_extensions	= usr_cert		# The extentions to add to the cert
 
 # Comment out the following two lines for the "traditional"
 # (and highly broken) format.
-name_opt 	= ca_default		# Subject Name options
-cert_opt 	= ca_default		# Certificate field options
+name_opt = ca_default		# Subject Name options
+cert_opt = ca_default		# Certificate field options
 
 # Extension copying option: use with caution.
 # copy_extensions = copy
@@ -100,7 +99,7 @@ emailAddress		= optional
 [ req ]
 default_bits			= 1024
 default_md        = sha1
-default_keyfile 	= privkey.pem
+default_keyfile = privkey.pem
 distinguished_name	= req_distinguished_name
 attributes		= req_attributes
 x509_extensions	= v3_ca	# The extentions to add to the self signed cert
